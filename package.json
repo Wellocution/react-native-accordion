@@ -1,6 +1,6 @@
 {
   "name": "@dev-event/react-native-accordion",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "A performant interactive collapsed view with fully configurable options",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -145,5 +145,7 @@
     "react-native-redash": "16.2.4",
     "react-native-svg": "12.1.1"
   },
-  "resolutions": { "@types/react": "~17.0.21" }
+  "resolutions": {
+    "@types/react": "~17.0.21"
+  }
 }
