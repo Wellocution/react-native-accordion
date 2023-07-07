@@ -1,1 +1,1 @@
-{"version":3,"sources":["index.ts"],"names":["default","useValidator"],"mappings":"AAAA,SAASA,OAAO,IAAIC,YAApB,QAAwC,iBAAxC","sourcesContent":["export { default as useValidator } from './use-validator';\n"]}
+{"version":3,"names":["default","useValidator"],"sources":["index.ts"],"sourcesContent":["export { default as useValidator } from './use-validator';\n"],"mappings":"AAAA,SAASA,OAAO,IAAIC,YAAY,QAAQ,iBAAiB"}

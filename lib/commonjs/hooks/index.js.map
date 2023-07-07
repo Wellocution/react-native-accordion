@@ -1,1 +1,1 @@
-{"version":3,"sources":["index.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA","sourcesContent":["export { default as useValidator } from './use-validator';\n"]}
+{"version":3,"names":["_useValidator","_interopRequireDefault","require","obj","__esModule","default"],"sources":["index.ts"],"sourcesContent":["export { default as useValidator } from './use-validator';\n"],"mappings":";;;;;;;;;;;AAAA,IAAAA,aAAA,GAAAC,sBAAA,CAAAC,OAAA;AAA0D,SAAAD,uBAAAE,GAAA,WAAAA,GAAA,IAAAA,GAAA,CAAAC,UAAA,GAAAD,GAAA,KAAAE,OAAA,EAAAF,GAAA"}
