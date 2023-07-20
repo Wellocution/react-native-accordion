@@ -126,7 +126,7 @@ export default forwardRef((props: IAccordionProps, ref: Ref<any>) => {
     if (onAnimatedEndExpanded !== undefined) {
       runOnJS(onAnimatedEndExpanded)();
     }
-    runOnUI(setMounted)(true);
+    runOnJS(setMounted)(true);
     runOnJS(setAddExtraSpace)(false);
   }, [onAnimatedEndExpanded]);
 
@@ -154,14 +154,14 @@ export default forwardRef((props: IAccordionProps, ref: Ref<any>) => {
   }));
 
   const openAccordion = useCallback(() => {
-    runOnUI(setUnmountedContent)(false);
+    runOnJS(setUnmountedContent)(false);
     runOnUI(() => {
       'worklet';
       size.value = handleHeightContent;
     })();
     open.value = !open.value;
     onChangeState && onChangeState(!open.value);
-  }, [handleHeightContent, isMounted, onChangeState, open, size]);
+  }, [handleHeightContent, onChangeState, open, size]);
 
   const hasLoader = useMemo(
     () =>
@@ -227,7 +227,7 @@ export default forwardRef((props: IAccordionProps, ref: Ref<any>) => {
     }
 
     if (!isMounted && !isUnmounted) {
-      return <DefaultLoading />
+      return <DefaultLoading />;
     }
 
     return isMounted && renderContent ? renderContent(progress) : null;
@@ -248,14 +248,14 @@ export default forwardRef((props: IAccordionProps, ref: Ref<any>) => {
       onPressSideEffect();
     } else if (!open.value && needsMoreSpaceForScroll) {
       setAddExtraSpace(true);
-    };
+    }
   }, [openAccordion, onPressSideEffect, open.value]);
 
   React.useEffect(() => {
     if (needsMoreSpaceForScroll && addExtraSpace) {
-      onPressSideEffect()
+      onPressSideEffect();
     }
-  }, [addExtraSpace])
+  }, [addExtraSpace]);
 
   return (
     <>
@@ -270,9 +270,7 @@ export default forwardRef((props: IAccordionProps, ref: Ref<any>) => {
       <Animated.View style={containerAnimatedStyle}>
         <View style={contentStyle}>{content()}</View>
       </Animated.View>
-      {addExtraSpace ? (
-        <View style={{ height }} />
-      ) : null}
+      {addExtraSpace ? <View style={{ height }} /> : null}
     </>
   );
 });
